@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AlgoRythmX</title>
+    <link rel="stylesheet" href="index.css">
+
+    <!-- ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="particles-js"></div>    
+<!-- BACKGROUND ANIMATION -->
+<div class="bg-animation"></div>
+
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <h1>🚀 AlgoRythmX</h1>
+    <a href="body.html" class="btn">Launch Visualizer</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h2>Visualize Algorithms Like Never Before</h2>
+    <p>Interactive animations for sorting & searching algorithms</p>
+</section>
+
+<!-- SORTING -->
+<section class="section">
+    <h2>🔄 Sorting Algorithms</h2>
+
+    <div class="card-container">
+        <div class="card" onclick="goToAlgo('bubble')">
+            <i class="ri-bubble-chart-fill"></i>
+            <h3>Bubble Sort</h3>
+            <p>Repeatedly swaps adjacent elements until sorted.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('selection')">
+            <i class="ri-focus-2-fill"></i>
+            <h3>Selection Sort</h3>
+            <p>Repeatedly finds the smallest element and places it at the beginning.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('insertion')">
+            <i class="ri-insert-row-top"></i>
+            <h3>Insertion Sort</h3>
+            <p>Builds the sorted array one item at a time.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('merge')">
+            <i class="ri-git-merge-fill"></i>
+            <h3>Merge Sort</h3>
+            <p>Divides the array into halves, sorts and merges them.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('quick')">
+            <i class="ri-flashlight-fill"></i>
+            <h3>Quick Sort</h3>
+            <p>Partitions the array and recursively sorts the partitions.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('heap')">
+            <i class="ri-bar-chart-grouped-fill"></i>
+            <h3>Heap Sort</h3>
+            <p>Builds a heap and repeatedly extracts the maximum element.</p>
+        </div>
+    </section>
+    <section class="section">
+    </div>
+    <h2>⚙ CPU Scheduling</h2>
+    <div class="card-container">
+    <div class="card" onclick="goToAlgo('fcfs')">
+        <i class="ri-timer-fill"></i>
+        <h3>FCFS</h3>
+        <p>First Come First Serve scheduling algorithm.</p>
+    </div>
+
+    <div class="card" onclick="goToAlgo('sjf')">
+        <i class="ri-sort-asc"></i>
+        <h3>SJF</h3>
+        <p>Shortest Job First scheduling algorithm.</p>
+    </div>
+
+    <div class="card" onclick="goToAlgo('rr')">
+        <i class="ri-refresh-line"></i>
+        <h3>Round Robin</h3>
+        <p>Each process is assigned a fixed time slot in a cyclic way.</p>
+    </div>
+</div>
+</section>
+
+<!-- SEARCHING -->
+<section class="section">
+    <h2>🔍 Searching Algorithms</h2>
+
+    <div class="card-container">
+        <div class="card" onclick="goToAlgo('linear')">
+            <i class="ri-search-line"></i>
+            <h3>Linear Search</h3>
+            <p>Checks each element until the target is found.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('binary')">
+            <i class="ri-radar-fill"></i>
+            <h3>Binary Search</h3>
+            <p>Efficiently searches a sorted array by repeatedly dividing the search interval in half.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PAGE REPLACEMENT -->
+ <section class="section">
+    <h2>🧠 Page Replacement</h2>
+
+    <div class="card-container">
+
+        <div class="card" onclick="goToAlgo('fifo')">
+            <i class="ri-box-3-line"></i>
+            <h3>FIFO</h3>
+            <p>Replaces the oldest page in memory.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('lru')">
+            <i class="ri-time-line"></i>
+            <h3>LRU</h3>
+            <p>Replaces the least recently used page.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('optimal')">
+            <i class="ri-focus-2-line"></i>
+            <h3>Optimal</h3>
+            <p>Replaces the page used farthest in future.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>🕸 Graph Algorithms</h2>
+
+    <div class="card-container">
+
+        <div class="card" onclick="goToAlgo('bfs')">
+            <i class="ri-node-tree"></i>
+            <h3>Breadth First Search</h3>
+            <p>Explores graph level by level using a queue.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('dfs')">
+            <i class="ri-share-forward-fill"></i>
+            <h3>Depth First Search</h3>
+            <p>Explores graph deeply before backtracking.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('dijkstra')">
+            <i class="ri-map-pin-2-line"></i>
+            <h3>Dijkstra's Algorithm</h3>
+            <p>Finds shortest paths from a source node to all other nodes in a weighted graph.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>🧩 Memory Allocation</h2>
+
+    <div class="card-container">
+
+        <div class="card" onclick="goToAlgo('firstfit')">
+            <i class="ri-layout-grid-fill"></i>
+            <h3>First Fit</h3>
+            <p>Allocates each process to the first memory block large enough.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('bestfit')">
+            <i class="ri-focus-2-fill"></i>
+            <h3>Best Fit</h3>
+            <p>Allocates process to the smallest block that fits it.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('worstfit')">
+            <i class="ri-stack-fill"></i>
+            <h3>Worst Fit</h3>
+            <p>Allocates process to the largest available memory block.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>💽 Disk Scheduling</h2>
+
+    <div class="card-container">
+
+        <div class="card" onclick="goToAlgo('diskfcfs')">
+            <i class="ri-hard-drive-2-fill"></i>
+            <h3>Disk FCFS</h3>
+            <p>Processes disk requests in the order they arrive.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('sstf')">
+            <i class="ri-focus-3-line"></i>
+            <h3>SSTF</h3>
+            <p>Selects the disk request closest to the current head.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('scan')">
+            <i class="ri-arrow-left-right-line"></i>
+            <h3>SCAN</h3>
+            <p>Disk head moves like an elevator servicing requests.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>🎨 Computer Graphics Algorithms</h2>
+
+    <div class="card-container">
+
+        <div class="card" onclick="goToAlgo('dda')">
+            <i class="ri-pencil-ruler-2-fill"></i>
+            <h3>DDA Line Drawing</h3>
+            <p>Draws a line by incrementally plotting pixels between two points.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('bresenham')">
+            <i class="ri-edit-2-fill"></i>
+            <h3>Bresenham Line</h3>
+            <p>Efficient line drawing algorithm using integer calculations.</p>
+        </div>
+
+        <div class="card" onclick="goToAlgo('circle')">
+            <i class="ri-circle-line"></i>
+            <h3>Midpoint Circle</h3>
+            <p>Draws a circle using symmetry and midpoint decision.</p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>Build for learning | Designed for clarity | AlgoRythmX</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+function goToAlgo(algo) {
+    window.location.href = `body.html?algo=${algo}`;
+}
+</script>
+
+</body>
+</html>
