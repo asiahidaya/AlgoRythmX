@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AlgoRythmX</title>
+<link rel="stylesheet" href="body.css">
+
+<!-- ICONS -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- 🌌 BACKGROUND -->
+<div class="bg-animation"></div>
+
+<!-- 🔷 NAVBAR -->
+<header class="navbar">
+<h1>🚀 AlgoRythmX</h1>
+<a href="index.html" class="btn">⬅ Home</a>
+</header>
+
+<!-- 🔷 MAIN WRAPPER -->
+<div class="app-container">
+
+<!-- 🧠 TOP INFO -->
+<div class="top-info glass">
+
+<h2 id="algoTitle">Algorithm</h2>
+
+<p id="algoDescription">
+Description will appear here
+</p>
+
+<div class="info-row">
+
+<p>
+<strong>⚡ Complexity:</strong>
+<span id="complexity"></span>
+</p>
+
+<p>
+<strong>📍 Step:</strong>
+<span id="steps"></span>
+</p>
+
+</div>
+
+</div>
+
+<!-- 🎮 CONTROLS -->
+<div class="controls glass">
+
+<select id="algorithmSelect">
+
+<optgroup label="Sorting Algorithms">    
+<option value="bubble">Bubble Sort</option>
+<option value="selection">Selection Sort</option>
+<option value="insertion">Insertion Sort</option>
+<option value="merge">Merge Sort</option>
+<option value="quick">Quick Sort</option>
+<option value="heap">Heap Sort</option>
+</optgroup>
+
+<optgroup label="Searching Algorithms">
+<option value="linear">Linear Search</option>
+<option value="binary">Binary Search</option>
+</optgroup>
+
+<optgroup label="Scheduling Algorithms">
+<option value="fcfs">FCFS Scheduling</option>
+<option value="sjf">SJF Scheduling</option>
+<option value="rr">Round Robin Scheduling</option>
+</optgroup>
+
+<optgroup label="Page Replacement">
+<option value="fifo">FIFO Page Replacement</option>
+<option value="lru">LRU Page Replacement</option>
+<option value="optimal">Optimal Page Replacement</option>
+</optgroup>
+
+<optgroup label="Graph Algorithms">
+<option value="bfs">BFS Graph Traversal</option>
+<option value="dfs">DFS Graph Traversal</option>
+<option value="dijkstra">Dijkstra's Algorithm</option>
+</optgroup>
+
+<optgroup label="Allocation Algorithms">
+<option value="firstfit">First Fit Allocation</option>
+<option value="bestfit">Best Fit Allocation</option>
+<option value="worstfit">Worst Fit Allocation</option>
+</optgroup>
+
+<optgroup label="Disk Scheduling">
+<option value="diskfcfs">Disk FCFS</option>
+<option value="sstf">SSTF Disk Scheduling</option>
+<option value="scan">SCAN Disk Scheduling</option>
+</optgroup>
+
+<optgroup label="CGIP Algorithms">
+<option value="dda">DDA Line Drawing</option>
+<option value="bresenham">Bresenham Line</option>
+<option value="circle">Midpoint Circle</option>
+</optgroup>
+
+</select>
+
+<input type="text"
+id="arrayInput"
+placeholder="Enter numbers e.g 5,3,8,1">
+
+<input type="number" id="x1"
+placeholder="Start X"
+style="display:none; width:80px; margin-left:10px;">
+
+<input type="number" id="y1"
+placeholder="Start Y"
+style="display:none; width:80px; margin-left:10px;">
+
+<input type="number" id="x2"
+placeholder="End X"
+style="display:none; width:80px; margin-left:10px;">
+
+<input type="number" id="y2"
+placeholder="End Y"
+style="display:none; width:80px; margin-left:10px;">
+
+<input type="number"
+id="headInput"
+placeholder="Disk head position"
+style="width:150px; display:none; margin-left:10px;">
+
+<select id="directionInput" style="display:none; margin-left:10px;">
+<option value="left">Left</option>
+<option value="right">Right</option>
+</select>
+
+<input type="text"
+id="blockInput"
+placeholder="Memory blocks e.g 100,500,200,300"
+style="display:none; width:200px; margin-left:10px;">
+
+<input type="text"
+id="processInput"
+placeholder="Processes e.g 212,417,112"
+style="display:none; width:200px; margin-left:10px;">
+
+<input type="number"
+id="quantumInput"
+placeholder="Quantum"
+style="width:120px; display:none; margin-left:10px;"
+min="1">
+
+<input type="text"
+id="targetInput"
+placeholder="Target"
+style="display:none; width:120px; margin-left:10px;">
+
+<input type="number"
+id="frameInput"
+placeholder="Frames"
+style="width:120px; display:none; margin-left:10px;"
+min="1">
+
+<button id="startBtn" class="primary-btn">
+Start
+</button>
+
+<label class="manual-control">
+<input type="checkbox" id="manualCheckbox">
+Manual
+</label>
+
+<button id="nextStepBtn"
+class="secondary-btn"
+disabled>
+Next
+</button>
+
+</div>
+
+<!-- 🎯 MAIN CONTENT -->
+<div class="main-layout">
+
+<!-- LEFT PANEL -->
+<aside class="left-panel glass">
+
+<div class="panel">
+<h3>📝 Description</h3>
+<div id="algoDetail"></div>
+</div>
+
+<div class="panel">
+<h3>📘 Algorithm</h3>
+<div id="algoSteps"></div>
+</div>
+
+</aside>
+
+<!-- VISUALIZER CENTER -->
+<section class="visualizer-container">
+
+<div class="visualizer glass">
+
+<!-- GRAPH / ARRAY VISUALIZATION -->
+<div id="visualizer"></div>
+
+</div>
+
+<div id="faultCounter" style="display:none;">
+⚠ Page Faults: <span id="faultCount">0</span>
+</div>
+
+<!-- FINAL DIJKSTRA RESULT -->
+<div id="dijkstraResult"
+class="dijkstra-result"
+style="display:none;">
+
+<h3>Final Shortest Distances</h3>
+
+<div id="finalDistances"></div>
+
+</div>
+
+<div id="bfsQueuePanel" class="queue-panel glass" style="display:none;">
+    <div class="queue-title">BFS Queue</div>
+    <div id="bfsQueue" class="queue-container"></div>
+</div>
+
+<div id="dfsStackPanel" class="queue-panel glass" style="display:none;">
+    <div class="queue-title">DFS Stack</div>
+    <div id="dfsStack" class="queue-container"></div>
+</div>
+
+<!-- READY QUEUE (Scheduling) -->
+<div class="queue-panel glass">
+
+<div class="queue-title">
+Ready Queue
+</div>
+
+<div id="readyQueue"
+class="queue-container">
+</div>
+
+</div>
+
+</section>
+
+<!-- RIGHT PANEL -->
+<aside class="right-panel glass">
+
+<div class="panel"
+id="recursionPanel"
+style="display:none;">
+
+<h3>🔄 Call Stack</h3>
+
+<div id="recursionStack"></div>
+
+</div>
+
+<div class="panel">
+
+<h3>📄 Steps</h3>
+
+<ul id="stepsList"></ul>
+
+</div>
+
+<!-- DIJKSTRA DISTANCE TABLE -->
+<div id="distancePanel"
+style="display:none;">
+
+<h3>Distances</h3>
+
+<div id="distanceTable"></div>
+
+</div>
+
+</aside>
+
+</div>
+
+</div>
+
+<div id="coordTooltip"></div>
+
+<script type="module" src="body.js"></script>
+
+</body>
+</html>
