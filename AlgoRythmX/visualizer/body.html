@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AlgoRythmX</title>
+<link rel="stylesheet" href="body.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="bg-animation"></div>
+
+<header class="navbar">
+<h1>🚀 AlgoRythmX</h1>
+<a href="../index.html" class="btn">⬅ Home</a>
+</header>
+
+<div class="app-container">
+
+<!-- TOP INFO -->
+<div class="top-info glass">
+<h2 id="algoTitle">Algorithm</h2>
+<p id="algoDescription">Description will appear here</p>
+
+<div class="info-row">
+<p><strong>⚡ Complexity:</strong> <span id="complexity"></span></p>
+<p><strong>📍 Step:</strong> <span id="steps"></span></p>
+</div>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls glass">
+
+<select id="algorithmSelect">
+<optgroup label="Sorting">
+<option value="bubble">Bubble</option>
+<option value="selection">Selection</option>
+<option value="insertion">Insertion</option>
+<option value="merge">Merge</option>
+<option value="quick">Quick</option>
+<option value="heap">Heap</option>
+</optgroup>
+
+<optgroup label="Searching">
+<option value="linear">Linear</option>
+<option value="binary">Binary</option>
+</optgroup>
+
+<optgroup label="Scheduling">
+<option value="fcfs">FCFS</option>
+<option value="sjf">SJF</option>
+<option value="rr">RR</option>
+</optgroup>
+
+<optgroup label="Page Replacement">
+<option value="fifo">FIFO</option>
+<option value="lru">LRU</option>
+<option value="optimal">Optimal</option>
+</optgroup>
+
+<optgroup label="Graph">
+<option value="bfs">BFS</option>
+<option value="dfs">DFS</option>
+<option value="dijkstra">Dijkstra</option>
+</optgroup>
+
+<optgroup label="Disk">
+<option value="diskfcfs">Disk FCFS</option>
+<option value="sstf">SSTF</option>
+<option value="scan">SCAN</option>
+</optgroup>
+
+<optgroup label="Page Replacement">
+<option value="firstfit">First Fit</option>
+<option value="bestfit">Best Fit</option>
+<option value="worstfit">Worst Fit</option>
+</optgroup>
+
+
+<optgroup label="CGIP">
+<option value="dda">DDA</option>
+<option value="bresenham">Bresenham</option>
+<option value="circle">Circle</option>
+</optgroup>
+</select>
+
+<input type="text" id="arrayInput" placeholder="Enter numbers (e.g. 5,3,8)">
+
+<input type="number" id="x1" style="display:none;" placeholder="Start X">
+<input type="number" id="y1" style="display:none;" placeholder="Start Y">
+<input type="number" id="x2" style="display:none;" placeholder="End X">
+<input type="number" id="y2" style="display:none;" placeholder="End Y">
+
+<input type="number" id="headInput" style="display:none;"placeholder="Head position">
+<input type="text" id="blockInput" style="display:none;" placeholder="Block sizes (e.g. 400,700,200)">
+<input type="text" id="processInput" style="display:none;" placeholder="Processes (e.g. 120,100,50)">
+<input type="number" id="quantumInput" style="display:none;"placeholder="Quantum time">
+<input type="text" id="targetInput" style="display:none;" placeholder="Target">
+<input type="number" id="frameInput" style="display:none;"placeholder="Number of frames">
+
+<button id="startBtn" class="primary-btn">Start</button>
+
+<label class="manual-control">
+<input type="checkbox" id="manualCheckbox"> Manual
+</label>
+
+<button id="nextStepBtn" class="secondary-btn" disabled>Next Step</button>
+
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="main-layout">
+
+<!-- LEFT -->
+<aside class="left-panel glass">
+
+<div class="panel">
+<h3>📝 Description</h3>
+<div id="algoDetail"></div>
+</div>
+
+<div class="panel">
+<h3>📘 Algorithm</h3>
+<div id="algoSteps"></div>
+</div>
+
+</aside>
+
+<!-- CENTER -->
+<section class="center-panel">
+
+<!-- MAIN CARD -->
+<div class="main-card glass">
+
+<!-- GANTT / VISUAL -->
+<div id="visualizer"></div>
+
+<!-- 🔥 READY QUEUE (MOVED UP) -->
+<div id="readyQueuePanel" class="queue-panel" style="display:none;">
+<div class="queue-title">Ready Queue</div>
+<div id="readyQueue" class="queue-container"></div>
+</div>
+
+<!-- BFS -->
+<div id="bfsQueuePanel" class="queue-panel" style="display:none;">
+<div class="queue-title">BFS Queue</div>
+<div id="bfsQueue" class="queue-container"></div>
+</div>
+
+<!-- DFS -->
+<div id="dfsStackPanel" class="queue-panel" style="display:none;">
+<div class="queue-title">DFS Stack</div>
+<div id="dfsStack" class="queue-container"></div>
+</div>
+
+</div>
+
+<!-- RESULTS -->
+<div id="resultsSection" class="glass">
+
+<div id="faultCounter" style="display:none;">
+⚠ Page Faults: <span id="faultCount">0</span>
+</div>
+
+<div id="dijkstraResult" style="display:none;">
+<h3>Final Shortest Distances</h3>
+<div id="finalDistances"></div>
+</div>
+
+</div>
+
+</section>
+
+<!-- RIGHT -->
+<aside class="right-panel glass">
+
+<div class="panel" id="recursionPanel" style="display:none;">
+<h3>🔄 Call Stack</h3>
+<div id="recursionStack"></div>
+</div>
+
+<div class="panel">
+<h3>📄 Steps</h3>
+<ul id="stepsList"></ul>
+</div>
+
+<div id="distancePanel" style="display:none;">
+<h3>Distances</h3>
+<div id="distanceTable"></div>
+</div>
+
+</aside>
+
+</div>
+
+</div>
+
+<div id="coordTooltip"></div>
+
+<script type="module" src="body.js"></script>
+
+</body>
+</html>
