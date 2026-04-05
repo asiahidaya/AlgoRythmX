@@ -69,19 +69,19 @@ AlgoRythmX is a comprehensive web-based platform that visualizes algorithms and 
 ## 📸 Screenshots
 
 ### 🔹 Dashboard
-![Dashboard](./Screenshots/dashboard.mp4)
+![Dashboard](./Screenshots/dashboard.png)
 
 ### 🔹 Sorting Visualization
-![Sorting](./Screenshots/sorting.mp4)
+![Sorting](./Screenshots/sorting.png)
 
 ### 🔹 CPU Scheduling
-![CPU](./Screenshots/cpu.mp4)
+![CPU](./Screenshots/cpu.png)
 
 ### 🔹 Graph Algorithm
-![Searching](./Screenshots/graph.mp4)
+![Searching](./Screenshots/graph.png)
 
 ### 🔹 Advanced Feature
-![Feature](./Screenshots/feature.mp4)
+![Feature](./Screenshots/feature.png)
 
 ---
 
